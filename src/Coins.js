@@ -15,8 +15,9 @@ const useStyles = makeStyles({
     width: "70px",
     margin: "auto",
   },
-  cardBackground: {
-    background: "#f2f9ff",
+
+  textFont: {
+    fontFamily: "'Raleway', sans-serif",
   },
 });
 
@@ -25,8 +26,8 @@ const Coins = (props) => {
   return (
     <>
       <Grid item xs={12} sm={4} xl={3} className="zoom">
-        <Card className={classes.cardBackground}>
-          <Typography>
+        <Card>
+          <Typography className={classes.textFont}>
             <CardContent>{props.item.id}</CardContent>
             <CardMedia image={props.item.logo_url} className={classes.image} />
             <CardContent>{props.item.name}</CardContent>

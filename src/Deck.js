@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { AppBar, Toolbar, Grid, CircularProgress } from "@material-ui/core";
+import {
+  AppBar,
+  Toolbar,
+  Grid,
+  CircularProgress,
+  Typography,
+} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 import Coins from "./Coins";
@@ -9,6 +15,14 @@ const useStyles = makeStyles({
     paddingTop: "20px",
     paddingLeft: "50px",
     paddingRight: "50px",
+  },
+  logo: {
+    fontFamily: "'Raleway', sans-serif",
+    fontSize: "2.5em",
+  },
+
+  navBar: {
+    marginLeft: "1.3em",
   },
 });
 
@@ -36,7 +50,9 @@ const Deck = () => {
   return (
     <>
       <AppBar position="static">
-        <Toolbar />
+        <Toolbar className={classes.navBar}>
+          <Typography className={classes.logo}>Coin/IN</Typography>
+        </Toolbar>
       </AppBar>
       {currencyData ? (
         <Grid container spacing={4} className={classes.deck}>
